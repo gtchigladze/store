@@ -28,8 +28,8 @@ export class TodoService {
      return this.firestore.doc('todo/' + todo.name).update(todo)
  }
 
- deleteTodo(todo: Todo){
-    return this.firestore.doc('todo/' + todo.name ).delete()
+ deleteTodo(id: string){
+    return this.firestore.doc('todo/' + id ).delete()
  }
 
 }

@@ -16,7 +16,7 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      name: new FormControl('',[Validators.required])
+      name: new FormControl(this.todo?.name,[Validators.required])
     })
   }
 

@@ -37,6 +37,10 @@ export class ListComponent implements OnInit {
   this.showUpdate = false
   }
 
+  deleteTodo(id: any){
+  this.todoService.deleteTodo(id)
+  }
+
   
 
  

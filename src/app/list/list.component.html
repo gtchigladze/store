@@ -9,7 +9,7 @@
             <tr *ngFor="let todo of todos">
                 <th>list:- {{ todo.name }}</th>
                 <th><button class="btn-two" (click)="showUpdate = true">Update</button></th>
-                <th><button class="btn-two">Delete</button></th>
+                <th><button class="btn-two" (click)="deleteTodo(todo.id)">Delete</button></th>
             </tr>
         </table>
        </div>
