@@ -1,0 +1,22 @@
+<body>
+
+    <div class="main" *ngIf="showCreate === false && !showUpdate">
+       <div class="create">
+        <button class="btn" (click)="showCreate = true">Create</button>
+       </div>
+       <div class="list">
+        <table>
+            <tr>
+                <th>list</th>
+                <th><button class="btn-two" (click)="showUpdate = true">Update</button></th>
+                <th><button class="btn-two">Delete</button></th>
+            </tr>
+        </table>
+       </div>
+    </div>
+
+
+    <app-create *ngIf="showCreate === true" (createFormClose)="closeCreate()"></app-create>
+    <app-update *ngIf="showUpdate === true" (updateFormClose)="closeUpdate()"></app-update>
+
+</body>

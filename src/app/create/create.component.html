@@ -1,0 +1,9 @@
+<form  [formGroup]="form">
+<input formControlName="name">
+<div class="btn-gap">
+    <button class="btn" type="button"
+    >Add</button>   
+    <button class="btn" type="button"
+    (click)="createFormClose.emit()">Cancel</button>
+</div>
+</form>
