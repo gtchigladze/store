@@ -4,10 +4,10 @@
        <div class="create">
         <button class="btn" (click)="showCreate = true">Create</button>
        </div>
-       <div class="list">
-        <table>
-            <tr>
-                <th>list</th>
+       <div class="list" >
+        <table >
+            <tr *ngFor="let todo of todos">
+                <th>list:- {{ todo.name }}</th>
                 <th><button class="btn-two" (click)="showUpdate = true">Update</button></th>
                 <th><button class="btn-two">Delete</button></th>
             </tr>
@@ -17,6 +17,6 @@
 
 
     <app-create *ngIf="showCreate === true" (createFormClose)="closeCreate()"></app-create>
-    <app-update *ngIf="showUpdate === true" (updateFormClose)="closeUpdate()"></app-update>
+    <app-update *ngIf="showUpdate"  [todo]="showUpdate" (updateFormClose)="closeUpdate()"></app-update>
 
 </body>

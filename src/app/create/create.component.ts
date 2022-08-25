@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { TodoService } from '../services/todo.service';
 
 @Component({
   selector: 'app-create',
@@ -11,7 +12,7 @@ export class CreateComponent implements OnInit {
   form!: FormGroup
   @Output() createFormClose = new EventEmitter();
 
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -19,6 +20,11 @@ export class CreateComponent implements OnInit {
     })
   }
 
+
+  addTodo(){
+    this.todoService.addTodo(this.form.value)
+    this.createFormClose.emit()
+  }
   
 
 }
